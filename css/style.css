@@ -1,0 +1,280 @@
+@charset "UTF-8";
+html {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.hidden {
+  visibility: hidden !important;
+}
+
+.container {
+  width: 50vw;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3411764706);
+  border-radius: 48px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.main {
+  flex-direction: column;
+  font-size: 2vw;
+  color: white;
+}
+.main__user {
+  margin-bottom: 40px;
+}
+
+.login {
+  position: absolute;
+  opacity: 0;
+}
+.login__inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+}
+.login__box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10%);
+  transition: all 0.24s 1s linear;
+}
+.login h2 {
+  font-weight: 500;
+  font-size: 2vw;
+  transform: translateY(150%);
+  transition: transform 0.5s 0.5s linear;
+}
+.login input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  padding: 8px 12px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+}
+.login button {
+  margin-top: 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 48px;
+  background-color: white;
+  font: inherit;
+  border-radius: 4px;
+}
+
+.login.animate {
+  opacity: 1;
+}
+.login.animate .login__inner {
+  transform: none;
+}
+.login.animate .login__box {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+.login.animate h2 {
+  transform: none;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 10vw;
+  font-weight: 700;
+  color: white;
+}
+.date .today {
+  font-size: 5vw;
+}
+.date .time {
+  display: flex;
+}
+.date .time .rel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.date .time-left {
+  position: relative;
+  animation: timeGo 4s ease backwards;
+}
+.date .time-left::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+@keyframes timeGo {
+  100% {
+    transform: rotateX(190deg);
+  }
+}
+
+a {
+  color: #ff1af1;
+}
+
+.weather {
+  position: absolute;
+  color: white;
+  font-size: 2vw;
+  font-weight: 500;
+  transform: rotateY(-90deg) translateZ(50px);
+  transition: all 0.3s ease-in;
+  visibility: hidden;
+}
+.weather.active {
+  transform: none;
+  visibility: visible;
+}
+.weather__inner {
+  display: flex;
+  flex-direction: column;
+}
+.weather__box {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.weather__icon {
+  width: 3vw;
+  height: 2vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.weather__tem {
+  position: relative;
+  font-size: 4vw;
+  font-weight: 600;
+}
+.weather__tem::after {
+  position: absolute;
+  content: "°";
+}
+.weather__location {
+  font-size: 1.8vw;
+  margin-bottom: 8px;
+}
+.weather__state {
+  font-size: 1.5vw;
+}
+
+.goBtn {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 4px;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  border-bottom: 1px solid #fff;
+}
+
+.todo {
+  flex-direction: column;
+  position: absolute;
+  visibility: hidden;
+  transform: rotateY(90deg) translateZ(50px);
+  transition: all 0.3s ease-in;
+  color: #242424;
+}
+.todo.active {
+  visibility: visible;
+  transform: none;
+}
+.todo h2 {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 3vw;
+}
+.todo input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  padding: 8px 12px;
+  height: 26px;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+}
+.todo button {
+  background: transparent;
+  border: 0;
+  background: #ddd;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+.todo button:hover {
+  background: #f75c31;
+  color: white;
+}
+.todo ul {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 18px;
+  max-height: 30vh;
+  border-radius: 4px;
+  background: white;
+  overflow-y: auto;
+}
+.todo ul::-webkit-scrollbar {
+  width: 6px;
+  background: #fff;
+}
+.todo ul::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+.todo ul li {
+  padding: 4px 12px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.todo ul li:hover {
+  background: #fbfbfb;
+}/*# sourceMappingURL=style.css.map */

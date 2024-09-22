@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- font -->
+	<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
+	<!-- style -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<button id="goWeather" class="goBtn">weather</button>
+	<div class="goLogin container main">
+		<div id="userChk" class="main__user"></div>
+		<div id="mimiClock" class="main__date date"></div>
+	</div>
+	<div id="loginBox" class="container login hidden">
+		<div class="login__inner">
+			<h2>Who are you?</h2>
+			<form id="loginForm">
+				<div class="login__box">
+					<input id="userName" type="text" placeholder="name" required>
+					<input id="userPw" type="password" placeholder="password" required>
+					<button id="loginBtn">Login</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div id="weatherBox" class="container weather">
+		<div class="weather__inner">
+			<div class="weather__box">
+				<div id="weatherIcon" class="weather__icon"></div>
+				<div id="tem" class="weather__tem"></div>
+			</div>
+			<div id="myPosition" class="weather__location">내 지역</div>
+			<div id="weatherState" class="weather__state"></div>
+		</div>
+	</div>
+	<div id="todoBox" class="container todo">
+		<h2>todoList</h2>
+		<div class="todo__inner">
+			<form id="todoForm">
+				<input type="text" placeholder="write a todo">
+			</form>
+			<ul id="todoList" class="todo__list"></ul>
+		</div>
+	</div>
+	<button id="goTodo" class="goBtn">todoList</button>
+	<script src="js/app.js" type="module"></script>
+	<!-- <script src="js/clock.js" type="script"></script> -->
+</body>
+</html>
