@@ -21,7 +21,7 @@ export default function mimiLogin(){
 function loginAcc(e){
 	e.preventDefault();
 	const userName = document.querySelector('#userName').value;
-	const userPw = document.querySelector('#userPw').value;
+	// const userPw = document.querySelector('#userPw').value;
 	localStorage.setItem("loginName", userName);
 	console.log(userName, userPw, localName)
 	if(localName){

@@ -105,7 +105,7 @@ function onGeo(position){
 		myposition.textContent = location;
 		weatherState.textContent = weather;
 		temperature.textContent = `${temp}`;
-		weatherIcon.style.backgroundImage = `url('../asset/img/${icon}.svg')`
+		weatherIcon.style.backgroundImage = `url('./asset/img/${icon}.svg')`
 	});
 
 }

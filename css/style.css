@@ -153,7 +153,7 @@ a {
 
 .weather {
   position: absolute;
-  color: white;
+  color: #242424;
   font-size: 2vw;
   font-weight: 500;
   transform: rotateY(-90deg) translateZ(50px);
